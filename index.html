@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini OS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="desktop">
+    <div class="app-icon" onclick="openApp('fileManager')">📁<span>File</span></div>
+    <div class="app-icon" onclick="openApp('calculator')">🧮<span>Calcolatrice</span></div>
+    <div class="app-icon" onclick="openApp('clock')">🕑<span>Orologio</span></div>
+    <div class="app-icon" onclick="openApp('notepad')">🗒️<span>Note</span></div>
+    <div class="app-icon" onclick="openApp('paint')">🖌️<span>Paint</span></div>
+    <div class="app-icon" onclick="openApp('browser')">🌐<span>Browser</span></div>
+  </div>
+
+  <div id="fileManager" class="app-window"><div class="app-header">File Manager <button onclick="closeApp('fileManager')">X</button></div><div class="app-content"><p>File manager demo.</p></div></div>
+  <div id="calculator" class="app-window"><div class="app-header">Calcolatrice <button onclick="closeApp('calculator')">X</button></div><div class="app-content"><input type="text" id="calcInput" readonly /><div class="calc-buttons"></div></div></div>
+  <div id="clock" class="app-window"><div class="app-header">Orologio <button onclick="closeApp('clock')">X</button></div><div class="app-content"><div id="clockDisplay"></div></div></div>
+  <div id="notepad" class="app-window"><div class="app-header">Note <button onclick="closeApp('notepad')">X</button></div><div class="app-content"><textarea></textarea></div></div>
+  <div id="paint" class="app-window"><div class="app-header">Paint <button onclick="closeApp('paint')">X</button></div><div class="app-content"><input type="color" id="paintColor" value="#000000"><button onclick="clearCanvas()">Pulisci</button><canvas id="canvas" width="500" height="300"></canvas></div></div>
+  <div id="browser" class="app-window"><div class="app-header">Browser <button onclick="closeApp('browser')">X</button></div><div class="app-content"><p>Google non può essere caricato direttamente. Inserisci l’URL qui:</p><input type="text" placeholder="https://esempio.com" onkeydown="simulateBrowser(event)" /></div></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
